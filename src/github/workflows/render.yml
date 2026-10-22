@@ -1,0 +1,22 @@
+name: Render SCG Film
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx remotion browser ensure
+      - run: mkdir -p out && npm run render
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SCG-One-System-MP4
+          path: out/SCG-One-System.mp4
+          retention-days: 7
