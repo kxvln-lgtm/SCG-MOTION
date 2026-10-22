@@ -1,0 +1,1 @@
+{"name":"scg-motion","version":"1.0.0","private":true,"scripts":{"studio":"remotion studio src/index.ts","render":"remotion render src/index.ts SCG-One-System out/SCG-One-System.mp4 --codec h264 --crf 18"},"dependencies":{"@remotion/cli":"^4.0.350","remotion":"^4.0.350","react":"^19.0.0","react-dom":"^19.0.0"},"devDependencies":{"typescript":"^5.8.0","@types/react":"^19.0.0"}}
